@@ -39,7 +39,7 @@ export function ClientShell({ children }: { children: ReactNode }) {
         </button>
       </header>
 
-      <main className="flex flex-1 flex-col px-5 pt-1 pb-40">
+      <main className="flex flex-1 flex-col pt-1 pr-7 pb-28 pl-5">
         <StoreGate>{children}</StoreGate>
       </main>
 
@@ -66,14 +66,8 @@ export function ClientShell({ children }: { children: ReactNode }) {
         })}
       </nav>
 
-      {/* Sits just above the tab bar, aligned to the app column on wide screens. */}
-      <DemoSwitch
-        to="practitioner"
-        style={{
-          right: "max(12px, calc(50% - 224px + 12px))",
-          bottom: "calc(max(18px, env(safe-area-inset-bottom)) + 70px)",
-        }}
-      />
+      {/* Slim tab on the right edge, inside the page margin, so it never covers content. */}
+      <DemoSwitch to="practitioner" variant="edge" />
 
       <HelpSheet open={helpOpen} onClose={() => setHelpOpen(false)} withProvider={isKetamine} />
     </div>

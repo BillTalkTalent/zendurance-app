@@ -24,7 +24,7 @@ export default function LibraryPage() {
   return (
     <div className="flex flex-col gap-3.5">
       <PageTitle title="Library" sub="Practices from Meghan, for the moments between sessions." />
-      <div className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1">
+      <div className="flex gap-2 overflow-x-auto pb-1">
         {FILTERS.map((f) => (
           <Pill key={f} selected={filter === f} onClick={() => setFilter(f)} className="min-h-10 shrink-0 px-3.5 text-sm">
             {f}

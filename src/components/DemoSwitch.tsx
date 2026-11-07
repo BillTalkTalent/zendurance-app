@@ -12,14 +12,36 @@ export function DemoSwitch({
   to,
   className,
   style,
+  variant = "pill",
 }: {
   to: "client" | "practitioner";
   className?: string;
   style?: CSSProperties;
+  /** "edge": a slim vertical tab on the right edge that stays out of the content. */
+  variant?: "pill" | "edge";
 }) {
   if (!DEMO_MODE) return null;
   const href = to === "client" ? "/app" : "/practitioner";
   const label = to === "client" ? "Jordan's app" : "Meghan's view";
+
+  if (variant === "edge") {
+    return (
+      <Link
+        href={href}
+        style={{ writingMode: "vertical-rl", ...style }}
+        title="Demo only: switch between the client app and the practitioner view"
+        aria-label={`Demo only: switch to ${label}`}
+        className={cx(
+          "fixed top-1/2 right-0 z-20 flex w-[17px] -translate-y-1/2 rotate-180 items-center gap-1.5 rounded-r-lg border border-l-0 border-dashed border-pine-soft bg-paper/95 py-3.5 text-[10px] leading-none font-semibold text-pine no-underline shadow-sm",
+          className,
+        )}
+      >
+        <span className="font-bold tracking-wider uppercase">Demo</span>
+        <span aria-hidden="true">·</span>
+        <span>{label}</span>
+      </Link>
+    );
+  }
 
   return (
     <Link
