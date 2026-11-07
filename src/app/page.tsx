@@ -1,69 +1,57 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="mx-auto flex min-h-dvh w-full max-w-2xl flex-col gap-8 px-6 py-14">
+      <Image src="/logo.png" alt="Zendurance Wellness" width={260} height={57} priority />
+
+      <div className="flex flex-col gap-3">
+        <h1 className="font-serif text-[42px] leading-[1.05] font-normal tracking-[-0.02em]">
+          A private space between sessions.
+        </h1>
+        <p className="text-[17px] leading-relaxed text-body">
+          A working demo of the Zendurance client app and Meghan&apos;s practitioner view. Everything you type stays in
+          this browser on this device. Nothing is sent anywhere.
+        </p>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Link
+          href="/app"
+          className="flex flex-col gap-1.5 rounded-[18px] bg-pine p-5 text-white no-underline hover:bg-pine-dark"
+        >
+          <span className="font-serif text-2xl">Client app</span>
+          <span className="text-sm text-mist">
+            Check-ins, journal, messages, library, intensive integration and the ketamine track. Best on a phone.
+          </span>
+        </Link>
+        <Link
+          href="/practitioner"
+          className="flex flex-col gap-1.5 rounded-[18px] border border-line bg-white p-5 text-ink no-underline hover:border-pine"
+        >
+          <span className="font-serif text-2xl">Practitioner view</span>
+          <span className="text-sm text-muted">
+            Meghan&apos;s dashboard: client trends, shared entries, agenda, messages and post-session notes.
+          </span>
+        </Link>
+      </div>
+
+      <section className="flex flex-col gap-2 rounded-[18px] bg-sand p-5 text-sm leading-relaxed text-body">
+        <h2 className="text-base font-bold text-ink">How the demo works</h2>
+        <p>
+          Both views share the same on-device data, so you can play both sides: share a journal entry or send a message
+          as Jordan, then open the practitioner view and see it arrive. Send takeaways as Meghan and they appear on
+          Jordan&apos;s Today screen.
+        </p>
+        <p>
+          To install on a phone: open this page in Safari (iPhone) or Chrome (Android), then choose{" "}
+          <strong>Add to Home Screen</strong>.
+        </p>
+        <p className="text-muted">
+          Demo only. Do not enter real client information. All names and content are sample data.
+        </p>
+      </section>
+    </main>
   );
 }

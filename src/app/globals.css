@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Zendurance brand tokens, taken from zendurancewellness.com (update when the brand refresh lands). */
+@theme {
+  --color-pine: #1e3b34;
+  --color-pine-dark: #122520;
+  --color-pine-soft: #4a5a53;
+  --color-ink: #1b1f1d;
+  --color-body: #3d4440;
+  --color-muted: #5b625e;
+  --color-line: #e2dfd7;
+  --color-line-strong: #d6d3ca;
+  --color-paper: #f7f6f2;
+  --color-sand: #f3f1ea;
+  --color-mist: #e9ece6;
+  --color-sage: #c9d6ce;
+  --color-sage-mid: #9db0a7;
+  --color-alert: #a3392b;
+  --color-warn-bg: #fbefe6;
+  --color-warn-ink: #5c2e12;
+  --color-flag: #8a4a14;
+  --color-flag-dot: #c26a1f;
+
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-pine);
+  outline-offset: 2px;
 }
