@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button, Card, Eyebrow, ProgressBar } from "@/components/ui";
 import { ChevronRight } from "@/components/icons";
+import { InstallTip } from "@/components/InstallGuide";
 import { fmtDay, fmtSession, greeting } from "@/lib/dates";
 import { intensiveProgress, practicesDoneToday, todaysCheckin } from "@/lib/derive";
 import { newId, update, useLoadedState } from "@/lib/store";
@@ -32,6 +33,8 @@ export default function TodayPage() {
         </h1>
         <p className="mt-1 text-[15px] text-muted">This is your space. Set the weight down.</p>
       </header>
+
+      <InstallTip />
 
       <section className="flex flex-col gap-1.5 rounded-[18px] bg-pine p-[18px] text-white">
         <span className="text-xs font-semibold tracking-[0.08em] text-sage uppercase">Next session</span>

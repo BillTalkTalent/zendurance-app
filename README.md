@@ -17,6 +17,7 @@ server. Do not enter real client information.
 | `/app/library` | Meghan's practices, filtered by audience (placeholder titles) |
 | `/app/intensive` | 90-day intensive integration: milestones, daily practices, weekly reflection |
 | `/app/ketamine` | Ketamine-assisted therapy track: Before / Day of / After, with guided integration |
+| `/install` | Step-by-step "Add to Home Screen" guide for iPhone, Android and computer (with a QR code to scan) |
 | `/practitioner` | Meghan's dashboard: client list with flags, trends, shared entries, agenda, messages, post-session takeaways |
 
 Both views read the same on-device data, so you can play both sides in one browser. "Reset demo data" in the

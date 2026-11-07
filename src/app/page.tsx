@@ -45,8 +45,8 @@ export default function Home() {
           Jordan&apos;s Today screen.
         </p>
         <p>
-          To install on a phone: open this page in Safari (iPhone) or Chrome (Android), then choose{" "}
-          <strong>Add to Home Screen</strong>.
+          To put it on a phone, see the <Link href="/install">install guide</Link>. On a computer it shows a QR code
+          clients can scan during a session.
         </p>
         <p className="text-muted">
           Demo only. Do not enter real client information. All names and content are sample data.
