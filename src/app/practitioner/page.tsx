@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AlertIcon, CheckIcon, LockIcon } from "@/components/icons";
+import { DemoSwitch } from "@/components/DemoSwitch";
 import { StoreGate } from "@/components/StoreGate";
 import { Button, Card, Pill, cx } from "@/components/ui";
 import { fmtDay, fmtMonthDay, fmtSession, fmtShortSession, fmtStamp } from "@/lib/dates";
@@ -35,6 +36,7 @@ export default function PractitionerPage() {
       <StoreGate>
         <Dashboard />
       </StoreGate>
+      <DemoSwitch to="client" className="right-5 bottom-5" />
     </div>
   );
 }
@@ -52,7 +54,7 @@ function Dashboard() {
   const attention = clients.filter((c) => flagFor(c)).length;
 
   return (
-    <div className="flex flex-wrap items-start gap-5 px-6 pt-5 pb-8">
+    <div className="flex flex-wrap items-start gap-5 px-6 pt-5 pb-20">
       <aside className="flex max-w-full flex-[1_1_260px] flex-col gap-3" aria-label="Clients">
         <div className="flex items-baseline justify-between">
           <h1 className="font-serif text-[26px] font-normal">Clients</h1>

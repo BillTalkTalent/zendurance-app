@@ -20,7 +20,8 @@ server. Do not enter real client information.
 | `/install` | Step-by-step "Add to Home Screen" guide for iPhone, Android and computer (with a QR code to scan) |
 | `/practitioner` | Meghan's dashboard: client list with flags, trends, shared entries, agenda, messages, post-session takeaways |
 
-Both views read the same on-device data, so you can play both sides in one browser. "Reset demo data" in the
+Both views read the same on-device data, so you can play both sides in one browser. A dashed **Demo** pill on each side
+switches between them; set `NEXT_PUBLIC_DEMO_MODE=off` (e.g. in Vercel's environment variables) to hide it. "Reset demo data" in the
 practitioner view restores the sample clients.
 
 A "Need help now" sheet (988, 911 and the Veterans Crisis Line option) is one tap away on every client screen.

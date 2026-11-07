@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
+import { DemoSwitch } from "./DemoSwitch";
 import { HelpSheet } from "./HelpSheet";
 import { BookIcon, ChatIcon, LibraryIcon, PulseIcon, SunIcon } from "./icons";
 import { StoreGate } from "./StoreGate";
@@ -38,7 +39,7 @@ export function ClientShell({ children }: { children: ReactNode }) {
         </button>
       </header>
 
-      <main className="flex flex-1 flex-col px-5 pt-1 pb-28">
+      <main className="flex flex-1 flex-col px-5 pt-1 pb-40">
         <StoreGate>{children}</StoreGate>
       </main>
 
@@ -64,6 +65,15 @@ export function ClientShell({ children }: { children: ReactNode }) {
           );
         })}
       </nav>
+
+      {/* Sits just above the tab bar, aligned to the app column on wide screens. */}
+      <DemoSwitch
+        to="practitioner"
+        style={{
+          right: "max(12px, calc(50% - 224px + 12px))",
+          bottom: "calc(max(18px, env(safe-area-inset-bottom)) + 70px)",
+        }}
+      />
 
       <HelpSheet open={helpOpen} onClose={() => setHelpOpen(false)} withProvider={isKetamine} />
     </div>
